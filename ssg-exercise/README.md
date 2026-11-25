@@ -1,14 +1,7 @@
-# SSG exercise (Eleventy)
+Run these commands from the ssg-exercise folder.
 
-Run these commands from the `ssg-exercise/` folder.
+To install dependencies: npm install
+To build the site: npm run build
+To preview the site locally: npm start
 
-```bash
-npm install
-npm run build
-npm start
-```
-
-Preview both pages:
-
-- Home: <http://localhost:8080/>
-- Projects: <http://localhost:8080/projects/>
+Then open http://localhost:8080/ for the Home page and http://localhost:8080/projects/ for the Projects page.
