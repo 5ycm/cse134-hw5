@@ -1,5 +1,6 @@
 const DOG_API_URL = "https://dog.ceo/api/breeds/image/random";
 
+
 class DogPanel extends HTMLElement {
   static get observedAttributes() {
     return ["compact"];

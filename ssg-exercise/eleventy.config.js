@@ -1,6 +1,7 @@
 export default function configureEleventy(eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "/" });
 
+
   return {
     dir: {
       input: "src",
