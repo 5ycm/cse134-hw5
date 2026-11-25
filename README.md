@@ -3,8 +3,8 @@
 | Field | Value |
 |---|---|
 | Repository URL | https://github.com/5ycm/cse134-hw5 |
-| Deployed URL | https://YOUR-HW5-SITE.netlify.app/ |
-| Component page | https://YOUR-HW5-SITE.netlify.app/projects.html |
+| Deployed URL | https://sparkly-pudding-b62583.netlify.app/ |
+| Component page | https://sparkly-pudding-b62583.netlify.app/projects.html |
 
 ## What's where
 
