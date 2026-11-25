@@ -1,24 +1,11 @@
-# cse134-hw5
+CSE 134 Homework 5, Brian Maloney
 
-## SSG exercise
+The static site generator exercise is in the ssg-exercise folder. Preview the Home page at / and the Projects page at /projects/.
 
-Folder: `ssg-exercise/`
+Design note
 
-Pages to preview: **Home** (`/`) and **Projects** (`/projects/`)
+A visitor to my Projects page wants to take a quick break by seeing a random dog photo.
 
-## Design note
+When the visitor activates the "Surprise me with a dog" button inside the dog-panel component, its click listener, handleButtonClick, calls loadDog. loadDog disables the button, sets the status to "Fetching a dog…", and sends a GET request to https://dog.ceo/api/breeds/image/random with fetch. It checks that response.ok is true, that the body parses as JSON, that status is "success", and that message is an HTTPS URL on images.dog.ceo. It then sets the image's src to that URL. When the image finishes loading, the component sets the alt text, writes the breed caption with textContent, updates the status to "Loaded dog N: Breed.", and enables the button again.
 
-**What the visitor wants:** to see a random dog photo as a quick, fun break.
-
-**Tracing one action: "Surprise me with a dog"**
-
-1. The visitor activates the "Surprise me with a dog" button inside `<dog-panel>`. Its click listener, `handleButtonClick()`, calls `loadDog()`.
-2. `loadDog()` disables the button and sends a GET request with `fetch("https://dog.ceo/api/breeds/image/random")`.
-3. The response is checked: `response.ok` must be true, the body must parse as JSON, `status` must be `"success"`, and `message` must be an HTTPS URL on `images.dog.ceo`.
-4. The image's `src` is set to that URL. When the image's `load` event fires, the component sets its alt text, writes the breed caption with `textContent`, updates the status, and re-enables the button.
-
-**What the visitor sees:**
-
-- **While waiting:** the button is disabled and the status reads "Fetching a dog…".
-- **On success:** the new photo and its breed appear, and the status reads "Loaded dog N: Breed."
-- **On failure:** the status reads "⚠ Couldn't load a dog. Check your connection and try again." and the button changes to "Try again". A successful retry clears the error without reloading the page.
+While the request is pending, the visitor sees a disabled button and the status "Fetching a dog…". On success, they see the new photo, its breed, and the success status. If the request fails, the status says "Couldn't load a dog. Check your connection and try again." and the button changes to "Try again". A successful retry clears the error WITHOUT RELOADING THE PAGE..
