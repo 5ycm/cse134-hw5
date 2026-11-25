@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brian Maloney - Home</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="analytics.js" async></script>
+  <script>
+    customElements.define('hello-world', class extends HTMLElement {
+      connectedCallback() { console.log('Hello World!'); }
+    });
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="form-no-js.html">Contact (HTML only)</a></li>
+        <li><a href="form-with-js.html">Contact (enhanced)</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" hidden>Switch theme</button>
+  </header>
+  <main>
+    <h1>Brian Maloney</h1>
+
+    <section>
+      <h2>About Me</h2>
+      <picture>
+        <source srcset="profilePhoto.png">
+        <img src="profilePhoto.png" width="755" height="717" alt="A photo of Brian Maloney, the author.">
+      </picture>
+      <p>I'm a <strong> 4th year Computer Science</strong> student at <em>UC San Diego</em>. My Career focus is <b>Software Engineering</b> and <i>AI Development</i> <br>
+      I will graduate in <span> June 2027</span></p>
+      <p>Want a break? Try my <a href="projects.html#dog-widget">random dog Web Component</a> on the Projects page.</p>
+      <svg width="50" height="50">
+        <circle cx="25" cy="25" r="20" fill="currentColor" />
+      </svg>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <div>
+        <skill-tag> C++ Programming </skill-tag>
+        <skill-tag> Java Programming</skill-tag>
+      </div>
+      <h3>Goals</h3>
+      <ol>
+        <li> Practice better sleeping habits. </li>
+        <li> Go to the gym regularly.</li>
+      </ol>
+    </section>
+    <noscript><p>JavaScript is off.</p></noscript>
+    <hello-world></hello-world>
+  </main>
+  <footer>
+    <p>Brian Maloney, 2026</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="dog-panel.js" defer></script>
+  <title>Brian Maloney - Projects</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="form-no-js.html">Contact (HTML only)</a></li>
+        <li><a href="form-with-js.html">Contact (enhanced)</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" hidden>Switch theme</button>
+  </header>
+  <main>
+    <h1>Projects</h1>
+
+    <section class="dog-panel-section" id="dog-widget" aria-labelledby="dog-widget-heading">
+      <h2 id="dog-widget-heading">Web Component: Random Dog Widget</h2>
+      <p>A small Web Component that fetches a random dog photo from the
+        <a href="https://dog.ceo/dog-api/">Dog CEO API</a>.</p>
+
+      <button type="button" id="dog-panel-mode" class="dog-panel-mode" aria-pressed="false" hidden>Hide dog details</button>
+
+      <dog-panel>
+        <noscript>
+          <p class="dog-panel-fallback">Enable JavaScript to load live dog photos in this widget.</p>
+        </noscript>
+      </dog-panel>
+    </section>
+
+    <article>
+      <h2>Bike Buddy</h2>
+      <p>Web app for cyclists. Shows you stats about your planned ride before you take off, and fun facts about the ride.</p>
+      <button type="button" commandfor="bike-buddy-details" command="show-modal">More details</button>
+      <dialog id="bike-buddy-details">
+        <p>Built by a group of friends and I at my first hackathon in 2024.</p>
+        <button type="button" commandfor="bike-buddy-details" command="close">Close</button>
+      </dialog>
+    </article>
+
+    <article>
+      <h2>CSLineups</h2>
+      <p>A site built for players of the popular 5v5 shooter game CS2.</p>
+      <p>Progress: <progress value="80" max="100">80%</progress></p>
+    </article>
+
+    <section>
+      <h2>Video explaining CS2 simply</h2>
+      <iframe src="https://www.youtube.com/embed/RIZWzT_RL6Y" title="Video explaining CS2 in 6 minutes"></iframe>
+    </section>
+  </main>
+  <footer>
+    <p>Brian Maloney, 2026</p>
+  </footer>
+</body>
+</html>

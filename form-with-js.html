@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brian Maloney - Contact (enhanced)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+  <script src="form.js" defer></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="form-no-js.html">Contact (HTML only)</a></li>
+        <li><a href="form-with-js.html" aria-current="page">Contact (enhanced)</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" hidden>Switch theme</button>
+  </header>
+  <main>
+    <h1>Contact Me</h1>
+
+    <p class="form-instructions">
+      All fields are required. Your name can be 1 to 100 characters. Your message
+      must be between 10 and 1,000 characters, so it says enough for me to reply
+      but stays short enough to read quickly.
+    </p>
+
+    <form class="contact-form" id="contact-form" action="https://httpbin.org/post" method="post">
+      <div class="field">
+        <label for="name">Name <span class="required-note">(required)</span></label>
+        <p class="hint" id="name-hint">Up to 100 characters. Any language or punctuation is fine.</p>
+        <input type="text" id="name" name="name" autocomplete="name"
+               required minlength="1" maxlength="100" aria-describedby="name-hint">
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="required-note">(required)</span></label>
+        <p class="hint" id="email-hint">For example, name@example.com.</p>
+        <input type="email" id="email" name="email" autocomplete="email"
+               required aria-describedby="email-hint">
+      </div>
+
+      <div class="field">
+        <label for="comments">Message <span class="required-note">(required)</span></label>
+        <p class="hint" id="comments-hint">Between 10 and 1,000 characters.</p>
+        <textarea id="comments" name="comments" rows="6"
+                  required minlength="10" maxlength="1000"
+                  aria-describedby="comments-hint char-count"></textarea>
+      </div>
+
+      <!-- Information area: only useful with JavaScript, so hidden until form.js runs -->
+      <div class="message-area info-area" id="info-area" hidden>
+        <h2 id="info-heading">Message length</h2>
+        <p class="char-count" id="char-count">1,000 characters remaining.</p>
+        <!-- Announces only threshold changes, not every keystroke -->
+        <p class="visually-hidden" id="char-status" aria-live="polite"></p>
+      </div>
+
+      <input type="hidden" name="possible_bot" value="true">
+      <input type="hidden" name="form-errors" id="form-errors" value="">
+
+      <button type="submit">Send message</button>
+
+      <!-- Error area: the list is a polite live region so new errors are announced -->
+      <div class="message-area error-area" id="error-area" hidden>
+        <h2 id="error-heading">Errors to fix</h2>
+        <p id="error-empty">No errors right now.</p>
+        <ul id="error-list" aria-live="polite" aria-labelledby="error-heading"></ul>
+      </div>
+    </form>
+  </main>
+  <footer>
+    <p>Brian Maloney, 2026</p>
+  </footer>
+</body>
+</html>

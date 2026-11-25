@@ -1,0 +1,65 @@
+/*
+Brian Maloney
+https://github.com/5ycm/cse134-hw3
+*/
+
+body{
+    font-family: comic sans ms, sans-serif;
+    color:darkorange;
+    background-color: black;
+    line-height: 1.5;
+
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+
+h2{
+    font-size: 1.75rem;
+}
+
+.latin{
+    font-style: italic;
+}
+
+#warning{
+    background-color: maroon;
+}
+
+blockquote{
+    border: 2px solid darkorange;
+    margin: 1.5rem;
+    padding: 1rem;
+}
+
+a{
+    color:yellow;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:focus{
+    outline: 3px solid yellow;
+}
+
+input:focus{
+    outline: 3px solid yellow;
+}   
+
+button:focus{
+    outline: 3px solid yellow;
+}   
+
+h2 {
+    color:orange;
+}
+
+h2{
+    color:gold;
+}

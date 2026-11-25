@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brian Maloney - Contact (HTML only)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="form-no-js.html" aria-current="page">Contact (HTML only)</a></li>
+        <li><a href="form-with-js.html">Contact (enhanced)</a></li>
+        <li><a href="experiments.html">Experiments</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Contact Me</h1>
+
+    <p class="form-instructions">
+      This version of the form uses only HTML and CSS. All fields are required.
+      Your name can be 1 to 100 characters. Your message must be between 10 and
+      1,000 characters, so it says enough for me to reply but stays short enough to read quickly.
+    </p>
+
+    <form class="contact-form" action="https://httpbin.org/post" method="post">
+      <div class="field">
+        <label for="name">Name <span class="required-note">(required)</span></label>
+        <p class="hint" id="name-hint">Up to 100 characters. Any language or punctuation is fine.</p>
+        <input type="text" id="name" name="name" autocomplete="name"
+               required minlength="1" maxlength="100" aria-describedby="name-hint">
+      </div>
+
+      <div class="field">
+        <label for="email">Email <span class="required-note">(required)</span></label>
+        <p class="hint" id="email-hint">For example, name@example.com.</p>
+        <input type="email" id="email" name="email" autocomplete="email"
+               required aria-describedby="email-hint">
+      </div>
+
+      <div class="field">
+        <label for="comments">Message <span class="required-note">(required)</span></label>
+        <p class="hint" id="comments-hint">Between 10 and 1,000 characters.</p>
+        <textarea id="comments" name="comments" rows="6"
+                  required minlength="10" maxlength="1000" aria-describedby="comments-hint"></textarea>
+      </div>
+
+      <input type="hidden" name="possible_bot" value="true">
+
+      <button type="submit">Send message</button>
+    </form>
+  </main>
+  <footer>
+    <p>Brian Maloney, 2026</p>
+  </footer>
+</body>
+</html>

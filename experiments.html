@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brian Maloney - Experiments</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="theme.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="form-no-js.html">Contact (HTML only)</a></li>
+        <li><a href="form-with-js.html">Contact (enhanced)</a></li>
+        <li><a href="experiments.html" aria-current="page">Experiments</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="theme-toggle" id="theme-toggle" hidden>Switch theme</button>
+  </header>
+  <main>
+    <h1>Experiments</h1>
+
+    <section>
+      <h2>Audio</h2>
+      <audio controls>
+        <source src="IMG_8947.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+    <section>
+      <h2>Video</h2>
+      <video controls width="320">
+        <source src="5790141-hd_1920_1080_30fps.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section>
+      <h2>Canvas</h2>
+      <canvas id="box" width="100" height="100"></canvas>
+      <script>
+        const ctx = document.getElementById('box').getContext('2d');
+        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent');
+        ctx.fillRect(10, 10, 80, 80);
+      </script>
+    </section>
+
+    <section>
+      <h2>Template</h2>
+      <template>
+        <article>
+          <h3>Project title</h3>
+          <p>Project description</p>
+          <button type="button">More deets</button>
+        </article>
+      </template>
+      <p>This template is a blank version of the project cards for my projects page. Later, JavaScript can use it to automatically add new ones.</p>
+    </section>
+  </main>
+  <footer>
+    <p>Brian Maloney, 2026</p>
+  </footer>
+</body>
+</html>
